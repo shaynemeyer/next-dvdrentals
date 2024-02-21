@@ -7,8 +7,8 @@ export async function getAllRentals({
   page = 0,
   take = takeDefault,
 }: {
-  page: number;
-  take: number;
+  page?: number;
+  take?: number;
 }) {
   // todo: page results because this query is huge.
   return await prisma.rental.findMany({ skip: page * take, take });
