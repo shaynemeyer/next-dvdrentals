@@ -1,6 +1,6 @@
 import React from 'react';
-import { getAllAddresses } from '@/actions/address';
-import { getAllCities } from '@/actions/city';
+import { getAllAddresses } from '@/lib/actions/address';
+import { getAllCities } from '@/lib/actions/city';
 
 import {
   Table,

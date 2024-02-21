@@ -1,4 +1,4 @@
-import { getAllStaff } from '@/actions/staff';
+import { getAllStaff } from '@/lib/actions/staff';
 import {
   Table,
   TableBody,

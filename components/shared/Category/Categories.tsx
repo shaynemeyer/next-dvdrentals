@@ -8,7 +8,7 @@ import {
   TableRow,
 } from '@/components/ui/table';
 
-import { getAllCategories } from '@/actions/category';
+import { getAllCategories } from '@/lib/actions/category';
 
 async function Categories() {
   const categories = await getAllCategories();

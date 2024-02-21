@@ -8,7 +8,7 @@ import {
   TableRow,
 } from '@/components/ui/table';
 
-import { getAllFilms } from '@/actions/film';
+import { getAllFilms } from '@/lib/actions/film';
 
 async function Films() {
   const films = await getAllFilms();

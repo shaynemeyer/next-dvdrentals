@@ -8,14 +8,23 @@ import {
   TableRow,
 } from '@/components/ui/table';
 
-import { getAllRentals } from '@/actions/rental';
-import { getAllCustomers } from '@/actions/customer';
-import { getAllStaff } from '@/actions/staff';
-import { getAllInventory } from '@/actions/inventory';
-import { getAllFilms } from '@/actions/film';
+import { getAllRentals, getTotalRentalCount } from '@/lib/actions/rental';
+import { getAllCustomers } from '@/lib/actions/customer';
+import { getAllStaff } from '@/lib/actions/staff';
+import { getAllInventory } from '@/lib/actions/inventory';
+import { getAllFilms } from '@/lib/actions/film';
+import Pager from '@/components/shared/Pager/Pager';
+import { usePathname } from 'next/navigation';
 
-async function RentalPage() {
-  const rentals = await getAllRentals();
+async function RentalPage({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string };
+}) {
+  const selectedPage = searchParams?.page || '1';
+
+  const rentals = await getAllRentals({ page: parseInt(selectedPage) });
+  const rentalCount = await getTotalRentalCount();
   const customers = await getAllCustomers();
   const staff = await getAllStaff();
   const inventory = await getAllInventory();
@@ -66,6 +75,7 @@ async function RentalPage() {
           ))}
         </TableBody>
       </Table>
+      <Pager totalCount={rentalCount} selectedPage={selectedPage} />
     </div>
   );
 }

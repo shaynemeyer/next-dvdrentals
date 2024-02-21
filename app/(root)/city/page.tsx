@@ -7,8 +7,8 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { getAllCities } from '@/actions/city';
-import { getAllCountries } from '@/actions/country';
+import { getAllCities } from '@/lib/actions/city';
+import { getAllCountries } from '@/lib/actions/country';
 
 async function CityPage() {
   const cities = await getAllCities();

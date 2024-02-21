@@ -7,7 +7,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { getAllLanguages } from '@/actions/languages';
+import { getAllLanguages } from '@/lib/actions/languages';
 
 async function LanguagePage() {
   const languages = await getAllLanguages();

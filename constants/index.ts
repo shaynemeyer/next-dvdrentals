@@ -1,3 +1,5 @@
+export const takeDefault = 15;
+
 export const navLinks = [
   {
     label: 'Home',

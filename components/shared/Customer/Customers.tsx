@@ -7,9 +7,9 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { getAllCustomers } from '@/actions/customer';
-import { getAllStores } from '@/actions/store';
-import { getAllAddresses } from '@/actions/address';
+import { getAllCustomers } from '@/lib/actions/customer';
+import { getAllStores } from '@/lib/actions/store';
+import { getAllAddresses } from '@/lib/actions/address';
 
 async function Customers() {
   const customers = await getAllCustomers();

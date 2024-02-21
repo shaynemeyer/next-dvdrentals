@@ -8,11 +8,11 @@ import {
   TableRow,
 } from '@/components/ui/table';
 
-import { getAllInventory } from '@/actions/inventory';
-import { getAllFilms } from '@/actions/film';
-import { getAllStores } from '@/actions/store';
-import { getAllAddresses } from '@/actions/address';
-import { getAllCities } from '@/actions/city';
+import { getAllInventory } from '@/lib/actions/inventory';
+import { getAllFilms } from '@/lib/actions/film';
+import { getAllStores } from '@/lib/actions/store';
+import { getAllAddresses } from '@/lib/actions/address';
+import { getAllCities } from '@/lib/actions/city';
 
 async function InventoryPage() {
   const inventory = await getAllInventory();

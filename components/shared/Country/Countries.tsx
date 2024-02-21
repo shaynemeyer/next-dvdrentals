@@ -1,4 +1,4 @@
-import { getAllCountries } from '@/actions/country';
+import { getAllCountries } from '@/lib/actions/country';
 import {
   Table,
   TableBody,

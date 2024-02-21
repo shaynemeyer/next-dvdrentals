@@ -1,5 +1,5 @@
 import React from 'react';
-import { getAllActors } from '@/actions/actor';
+import { getAllActors } from '@/lib/actions/actor';
 import {
   Table,
   TableBody,
