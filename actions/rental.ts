@@ -3,5 +3,6 @@
 import prisma from '@/lib/db';
 
 export async function getAllRentals() {
-  return await prisma.rental.findMany();
+  // todo: page results because this query is huge.
+  return await prisma.rental.findMany({ take: 10 });
 }
