@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { IBM_Plex_Sans } from 'next/font/google';
 import './globals.css';
-import Header from '@/components/shared/Header/Header';
+import Header from '@/components/Header/Header';
 import Image from 'next/image';
 
 const IBMPlex = IBM_Plex_Sans({
@@ -21,11 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${IBMPlex.className} dark:bg-slate-700 dark:text-slate-300`}
-      >
-        {children}
-      </body>
+      <body className={`${IBMPlex.className}`}>{children}</body>
     </html>
   );
 }

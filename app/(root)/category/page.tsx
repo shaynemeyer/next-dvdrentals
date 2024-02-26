@@ -1,4 +1,4 @@
-import Categories from '@/components/shared/Category/Categories';
+import Categories from '@/components/Category/Categories';
 import React from 'react';
 
 function CategoryPage() {

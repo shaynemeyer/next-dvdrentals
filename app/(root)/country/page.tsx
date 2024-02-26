@@ -1,4 +1,4 @@
-import Countries from '@/components/shared/Country/Countries';
+import Countries from '@/components/Country/Countries';
 import React from 'react';
 
 function CountryPage() {

@@ -1,4 +1,4 @@
-import Films from '@/components/shared/Film/Films';
+import Films from '@/components/Film/Films';
 import React from 'react';
 
 function page() {

@@ -1,4 +1,4 @@
-import Customers from '@/components/shared/Customer/Customers';
+import Customers from '@/components/Customer/Customers';
 import React from 'react';
 
 function Customer() {
