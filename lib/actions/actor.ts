@@ -2,11 +2,6 @@
 
 import { ITEMS_PER_PAGE } from '@/constants';
 import prisma from '@/lib/db';
-import { ActorInfo } from '@/types/ActorInfo';
-
-export async function getAllActors() {
-  return await prisma.actor.findMany();
-}
 
 export async function getFilteredActors(query: string, currentPage: number) {
   const offsetSkip = (currentPage - 1) * ITEMS_PER_PAGE;
@@ -27,6 +22,20 @@ export async function getFilteredActors(query: string, currentPage: number) {
     skip: offsetSkip,
     take: ITEMS_PER_PAGE,
   });
+}
+
+export async function fetchActorPages(query: string) {
+  const count = await prisma.actor.count({
+    where: {
+      OR: [
+        { first_name: { contains: query } },
+        { last_name: { contains: query } },
+      ],
+    },
+  });
+
+  const totalPages = Math.ceil(Number(count) / ITEMS_PER_PAGE);
+  return totalPages;
 }
 
 export async function getActorById(id: number) {

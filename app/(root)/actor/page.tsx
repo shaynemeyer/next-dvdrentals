@@ -2,7 +2,7 @@ import ActorTable from '@/components/Actor/Table';
 import Pagination from '@/components/shared/Pagination';
 import Search from '@/components/shared/search';
 import { ITEMS_PER_PAGE } from '@/constants';
-import { getTotalActorCount } from '@/lib/actions/actor';
+import { fetchActorPages, getTotalActorCount } from '@/lib/actions/actor';
 import React from 'react';
 
 async function page({
@@ -10,9 +10,11 @@ async function page({
 }: {
   searchParams: { [key: string]: string };
 }) {
+  const query = searchParams?.query || '';
   const selectedPage = Number(searchParams?.page) || 1;
-  const actorCount = await getTotalActorCount();
-  const totalPages = Math.ceil(Number(actorCount) / ITEMS_PER_PAGE);
+
+  const totalPages = await fetchActorPages(query);
+  console.log({ totalPages });
 
   return (
     <div className="w-full">
