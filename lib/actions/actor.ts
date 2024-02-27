@@ -12,8 +12,8 @@ export async function getFilteredActors(query: string, currentPage: number) {
       take: ITEMS_PER_PAGE,
       where: {
         OR: [
-          { first_name: { contains: query } },
-          { last_name: { contains: query } },
+          { first_name: { contains: query, mode: 'insensitive' } },
+          { last_name: { contains: query, mode: 'insensitive' } },
         ],
       },
     });

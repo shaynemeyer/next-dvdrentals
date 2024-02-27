@@ -14,7 +14,6 @@ async function page({
   const selectedPage = Number(searchParams?.page) || 1;
 
   const totalPages = await fetchActorPages(query);
-  console.log({ totalPages });
 
   return (
     <div className="w-full">

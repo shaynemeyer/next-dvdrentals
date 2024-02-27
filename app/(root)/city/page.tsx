@@ -7,40 +7,35 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { getAllCities } from '@/lib/actions/city';
-import { getAllCountries } from '@/lib/actions/country';
+import { fetchCityPages } from '@/lib/actions/city';
+import Pagination from '@/components/shared/Pagination';
+import Search from '@/components/shared/search';
+import { ITEMS_PER_PAGE } from '@/constants';
+import CityTable from '@/components/City/CityTable';
 
-async function CityPage() {
-  const cities = await getAllCities();
-  const countries = await getAllCountries();
+async function CityPage({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string };
+}) {
+  const query = searchParams?.query || '';
+  const selectedPage = Number(searchParams?.page) || 1;
+
+  const totalPages = await fetchCityPages(query);
 
   return (
-    <div>
-      <h1>Cites</h1>
-      <Table>
-        <TableHeader>
-          <TableRow>
-            <TableHead>ID</TableHead>
-            <TableHead>Name</TableHead>
-            <TableHead></TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {cities.map((city) => (
-            <TableRow key={city.city_id}>
-              <TableCell className="w-[30px]">{city.city_id}</TableCell>
-              <TableCell>{city.city}</TableCell>
-              <TableCell>
-                {
-                  countries.find(
-                    (country) => country.country_id === city.country_id
-                  )?.country
-                }
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+    <div className="w-full">
+      <div className="flex w-full items-center justify-between">
+        <h1 className={`text-2xl`}>Cites</h1>
+      </div>
+      <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
+        <Search placeholder="Search cities..." />
+        {/* <CreateCustomer /> */}
+      </div>
+      <CityTable query={searchParams.query} currentPage={selectedPage} />
+      <div className="mt-5 flex w-full justify-center">
+        <Pagination totalPages={totalPages} />
+      </div>
     </div>
   );
 }

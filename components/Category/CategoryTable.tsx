@@ -1,5 +1,4 @@
 import React from 'react';
-import { getFilteredActors } from '@/lib/actions/actor';
 import {
   Table,
   TableBody,
@@ -9,14 +8,16 @@ import {
   TableRow,
 } from '@/components/ui/table';
 
-async function ActorTable({
+import { getFilteredCategories } from '@/lib/actions/category';
+
+async function CategoryTable({
   query,
   currentPage,
 }: {
   query: string;
   currentPage: number;
 }) {
-  const actors = await getFilteredActors(query, currentPage);
+  const categories = await getFilteredCategories(query, currentPage);
 
   return (
     <Table>
@@ -28,12 +29,10 @@ async function ActorTable({
         </TableRow>
       </TableHeader>
       <TableBody>
-        {actors.map((actor) => (
-          <TableRow key={actor.actor_id}>
-            <TableCell className="w-[30px]">{actor.actor_id}</TableCell>
-            <TableCell>
-              {actor.first_name} {actor.last_name}
-            </TableCell>
+        {categories.map((cat) => (
+          <TableRow key={cat.category_id}>
+            <TableCell className="w-[30px]">{cat.category_id}</TableCell>
+            <TableCell>{cat.name}</TableCell>
             <TableCell></TableCell>
           </TableRow>
         ))}
@@ -42,4 +41,4 @@ async function ActorTable({
   );
 }
 
-export default ActorTable;
+export default CategoryTable;

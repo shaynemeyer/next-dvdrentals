@@ -71,36 +71,14 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground bg-slate-50;
   }
 }
 
-.auth {
-  @apply flex-center min-h-screen w-full
-}
 
-.root {
-  @apply flex min-h-screen w-full flex-col lg:flex-row;
-}
-
-.root-container {
-  @apply flex-1 overflow-auto lg:mt-0 lg:max-h-screen
-}
-
-.root-sidebar {
-  @apply pl-4 pt-4
-}
 
 /* ========================================== TAILWIND STYLES */
 @layer utilities {
-  /* ===== UTILITIES */
-  .wrapper {
-    @apply max-w-5xl mx-auto px-5 md:px-10 w-full p-4;
-  }
-
-  .gradient-text {
-    @apply bg-purple-gradient bg-cover bg-clip-text text-transparent;
-  }
 
   /* ===== ALIGNMENTS */
   .flex-center {
