@@ -1,8 +1,8 @@
-import ActorTable from '@/components/Actor/Table';
+import ActorTable from '@/components/Actor/ActorTable';
+import { CreateActor } from '@/components/Actor/Buttons';
 import Pagination from '@/components/shared/Pagination';
 import Search from '@/components/shared/search';
-import { ITEMS_PER_PAGE } from '@/constants';
-import { fetchActorPages, getTotalActorCount } from '@/lib/actions/actor';
+import { fetchActorPages } from '@/lib/actions/actor';
 import React from 'react';
 
 async function page({
@@ -22,7 +22,7 @@ async function page({
       </div>
       <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
         <Search placeholder="Search actors..." />
-        {/* <CreateCustomer /> */}
+        <CreateActor />
       </div>
       <ActorTable query={searchParams.query} currentPage={selectedPage} />
       <div className="mt-5 flex w-full justify-center">

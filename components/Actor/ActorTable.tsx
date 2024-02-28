@@ -8,6 +8,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import { DeleteActor, UpdateActor } from './Buttons';
 
 async function ActorTable({
   query,
@@ -34,7 +35,12 @@ async function ActorTable({
             <TableCell>
               {actor.first_name} {actor.last_name}
             </TableCell>
-            <TableCell></TableCell>
+            <TableCell className="whitespace-nowrap py-3 pl-6 pr-3">
+              <div className="flex justify-end gap-3">
+                <UpdateActor actor_id={`${actor.actor_id}`} />
+                <DeleteActor actor_id={`${actor.actor_id}`} />
+              </div>
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>

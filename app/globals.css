@@ -71,7 +71,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground bg-slate-50;
+    @apply bg-background text-foreground bg-zinc-50;
   }
 }
 
