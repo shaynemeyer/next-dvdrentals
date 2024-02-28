@@ -21,22 +21,21 @@ A UI/Admin application for the dvdrentals database.
 
 ## Todos
 
-- [ ] Layouts with Tailwind CSS
-- [ ] Site Navigation
+- [x] Layouts with Tailwind CSS
+- [x] Site Navigation
 
-- [ ] Forms for Actors (add & edit)
+- [x] Forms for Actors (add & edit)
 - [ ] Forms for Addresses (add & edit)
 - [ ] Forms for Categories (add & edit)
 - [ ] Forms for Cities (add & edit)
 - [ ] Forms for Countries (add & edit)
 - [ ] Forms for Customers (add & edit)
 - [ ] Forms for Films (add & edit)
+- [x] Forms for Languages (add & edit)
 - [ ] Forms for Stores (add & edit)
-
 - [ ] UI for managing inventory
 - [ ] Sales Dashboard with graphs
-- [ ] Pagination on bigger queries
-- [ ] Reload on scroll
+- [x] Pagination on bigger queries
 - [ ] Google Auth with NextAuth
 - [ ] Performance tune queries
 
