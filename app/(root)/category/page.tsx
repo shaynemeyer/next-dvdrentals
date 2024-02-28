@@ -3,6 +3,7 @@ import CategoryTable from '@/components/Category/CategoryTable';
 import { fetchCategoryPages } from '@/lib/actions/category';
 import Pagination from '@/components/shared/Pagination';
 import Search from '@/components/shared/search';
+import { CreateCategory } from '@/components/Category/Buttons';
 
 async function CategoryPage({
   searchParams,
@@ -21,7 +22,7 @@ async function CategoryPage({
       </div>
       <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
         <Search placeholder="Search categries..." />
-        {/* <CreateCustomer /> */}
+        <CreateCategory />
       </div>
       <CategoryTable query={searchParams.query} currentPage={selectedPage} />
       <div className="mt-5 flex w-full justify-center">

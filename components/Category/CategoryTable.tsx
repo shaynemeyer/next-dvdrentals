@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/table';
 
 import { getFilteredCategories } from '@/lib/actions/category';
+import { DeleteCategory, UpdateCategory } from './Buttons';
 
 async function CategoryTable({
   query,
@@ -29,11 +30,16 @@ async function CategoryTable({
         </TableRow>
       </TableHeader>
       <TableBody>
-        {categories.map((cat) => (
-          <TableRow key={cat.category_id}>
-            <TableCell className="w-[30px]">{cat.category_id}</TableCell>
-            <TableCell>{cat.name}</TableCell>
-            <TableCell></TableCell>
+        {categories.map((category) => (
+          <TableRow key={category.category_id}>
+            <TableCell className="w-[30px]">{category.category_id}</TableCell>
+            <TableCell>{category.name}</TableCell>
+            <TableCell className="whitespace-nowrap py-3 pl-6 pr-3">
+              <div className="flex justify-end gap-3">
+                <UpdateCategory category_id={`${category.category_id}`} />
+                <DeleteCategory category_id={`${category.category_id}`} />
+              </div>
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>
