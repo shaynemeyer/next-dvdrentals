@@ -1,61 +1,30 @@
 import React from 'react';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table';
+import Pagination from '@/components/shared/Pagination';
+import Search from '@/components/shared/search';
+import { fetchInventoryPages } from '@/lib/actions/inventory';
+import InventoryTable from '@/components/Inventory/InventoryTable';
 
-import { getAllInventory } from '@/lib/actions/inventory';
-import { getAllFilms } from '@/lib/actions/film';
-import { getAllStores } from '@/lib/actions/store';
-import { getAllAddresses } from '@/lib/actions/address';
-import { getAllCities } from '@/lib/actions/city';
+async function InventoryPage({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string };
+}) {
+  const query = searchParams?.query || '';
+  const selectedPage = Number(searchParams?.page) || 1;
 
-async function InventoryPage() {
-  const inventory = await getAllInventory();
-  const films = await getAllFilms();
-  const stores = await getAllStores();
-  const addresses = await getAllAddresses();
-  const cities = await getAllCities();
-
+  const totalPages = await fetchInventoryPages(query);
   return (
-    <div>
-      <h1>Inventory</h1>
-      <Table>
-        <TableHeader>
-          <TableRow>
-            <TableHead>ID</TableHead>
-            <TableHead>Film</TableHead>
-            <TableHead>Store</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {inventory.map((item) => {
-            const store = addresses.find(
-              (addy) =>
-                addy.address_id ===
-                stores.find((store) => store.store_id === item.store_id)
-                  ?.address_id
-            );
-            return (
-              <TableRow key={item.inventory_id}>
-                <TableCell className="w-[30px]">{item.inventory_id}</TableCell>
-                <TableCell>
-                  {films.find((film) => film.film_id === item.film_id)?.title}
-                </TableCell>
-                <TableCell>
-                  {store?.address},{' '}
-                  {cities.find((city) => city.city_id === store?.city_id)?.city}{' '}
-                  {store?.district}
-                </TableCell>
-              </TableRow>
-            );
-          })}
-        </TableBody>
-      </Table>
+    <div className="w-full">
+      <div className="flex w-full items-center justify-between">
+        <h1 className={`text-2xl`}>Inventory</h1>
+      </div>
+      <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
+        <Search placeholder="Search inventory..." />
+      </div>
+      <InventoryTable query={searchParams.query} currentPage={selectedPage} />
+      <div className="mt-5 flex w-full justify-center">
+        <Pagination totalPages={totalPages} />
+      </div>
     </div>
   );
 }

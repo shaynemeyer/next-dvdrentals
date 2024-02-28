@@ -1,16 +1,7 @@
 import React from 'react';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table';
 import { fetchCityPages } from '@/lib/actions/city';
 import Pagination from '@/components/shared/Pagination';
 import Search from '@/components/shared/search';
-import { ITEMS_PER_PAGE } from '@/constants';
 import CityTable from '@/components/City/CityTable';
 
 async function CityPage({

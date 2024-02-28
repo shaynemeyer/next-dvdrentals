@@ -1,10 +1,8 @@
 import React from 'react';
 import CategoryTable from '@/components/Category/CategoryTable';
-
 import { fetchCategoryPages } from '@/lib/actions/category';
 import Pagination from '@/components/shared/Pagination';
 import Search from '@/components/shared/search';
-import { ITEMS_PER_PAGE } from '@/constants';
 
 async function CategoryPage({
   searchParams,

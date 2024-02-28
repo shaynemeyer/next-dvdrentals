@@ -1,4 +1,4 @@
-import React from 'react';
+import { getFilteredCountries } from '@/lib/actions/country';
 import {
   Table,
   TableBody,
@@ -7,17 +7,16 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import React from 'react';
 
-import { getFilteredCategories } from '@/lib/actions/category';
-
-async function CategoryTable({
+async function CountryTable({
   query,
   currentPage,
 }: {
   query: string;
   currentPage: number;
 }) {
-  const categories = await getFilteredCategories(query, currentPage);
+  const countries = await getFilteredCountries(query, currentPage);
 
   return (
     <Table className="bg-white mt-4">
@@ -29,10 +28,10 @@ async function CategoryTable({
         </TableRow>
       </TableHeader>
       <TableBody>
-        {categories.map((cat) => (
-          <TableRow key={cat.category_id}>
-            <TableCell className="w-[30px]">{cat.category_id}</TableCell>
-            <TableCell>{cat.name}</TableCell>
+        {countries.map((item) => (
+          <TableRow key={item.country_id}>
+            <TableCell className="w-[30px]">{item.country_id}</TableCell>
+            <TableCell>{item.country}</TableCell>
             <TableCell></TableCell>
           </TableRow>
         ))}
@@ -41,4 +40,4 @@ async function CategoryTable({
   );
 }
 
-export default CategoryTable;
+export default CountryTable;

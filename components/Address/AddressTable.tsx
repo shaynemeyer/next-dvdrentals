@@ -20,7 +20,7 @@ async function AddressTable({
   const addresses = await getFilteredAddresses(query, currentPage);
 
   return (
-    <Table>
+    <Table className="bg-white mt-4">
       <TableHeader>
         <TableRow>
           <TableHead>ID</TableHead>

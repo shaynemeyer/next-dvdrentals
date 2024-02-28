@@ -7,17 +7,16 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import { getFilteredLanguages } from '@/lib/actions/languages';
 
-import { getFilteredCategories } from '@/lib/actions/category';
-
-async function CategoryTable({
+async function LanguageTable({
   query,
   currentPage,
 }: {
   query: string;
   currentPage: number;
 }) {
-  const categories = await getFilteredCategories(query, currentPage);
+  const languages = await getFilteredLanguages(query, currentPage);
 
   return (
     <Table className="bg-white mt-4">
@@ -29,10 +28,10 @@ async function CategoryTable({
         </TableRow>
       </TableHeader>
       <TableBody>
-        {categories.map((cat) => (
-          <TableRow key={cat.category_id}>
-            <TableCell className="w-[30px]">{cat.category_id}</TableCell>
-            <TableCell>{cat.name}</TableCell>
+        {languages.map((language) => (
+          <TableRow key={language.language_id}>
+            <TableCell className="w-[30px]">{language.language_id}</TableCell>
+            <TableCell>{language.name}</TableCell>
             <TableCell></TableCell>
           </TableRow>
         ))}
@@ -41,4 +40,4 @@ async function CategoryTable({
   );
 }
 
-export default CategoryTable;
+export default LanguageTable;

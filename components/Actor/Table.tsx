@@ -19,7 +19,7 @@ async function ActorTable({
   const actors = await getFilteredActors(query, currentPage);
 
   return (
-    <Table>
+    <Table className="bg-white mt-4">
       <TableHeader>
         <TableRow>
           <TableHead>ID</TableHead>
