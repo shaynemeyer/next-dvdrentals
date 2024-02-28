@@ -13,7 +13,6 @@ function EditForm({ actor }: { actor: ActorForm }) {
   const updateActorWithId = updateActor.bind(null, actor.actor_id);
   const [state, dispatch] = useFormState(updateActorWithId, initialState);
 
-  console.log({ actor });
   return (
     <form action={dispatch}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">

@@ -16,8 +16,6 @@ async function EditActorPage({ params }: { params: { id: string } }) {
     notFound();
   }
 
-  console.log('ActorID: ' + actor.actor_id);
-
   return (
     <main>
       <Breadcrumbs
