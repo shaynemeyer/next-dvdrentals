@@ -13,6 +13,7 @@ import {
   RectangleStackIcon,
   IdentificationIcon,
   BanknotesIcon,
+  BuildingStorefrontIcon,
 } from '@heroicons/react/24/outline';
 
 export const ITEMS_PER_PAGE = 10;
@@ -24,19 +25,29 @@ export const navLinks = [
     icon: HomeIcon,
   },
   {
+    label: 'Films',
+    route: '/film',
+    icon: FilmIcon,
+  },
+  {
     label: 'Actors',
     route: '/actor',
     icon: TicketIcon,
   },
   {
-    label: 'Addresses',
-    route: '/address',
-    icon: MapPinIcon,
-  },
-  {
     label: 'Categories',
     route: '/category',
     icon: TableCellsIcon,
+  },
+  {
+    label: 'Languages',
+    route: '/language',
+    icon: LanguageIcon,
+  },
+  {
+    label: 'Addresses',
+    route: '/address',
+    icon: MapPinIcon,
   },
   {
     label: 'Cities',
@@ -53,21 +64,13 @@ export const navLinks = [
     route: '/customer',
     icon: UserIcon,
   },
-  {
-    label: 'Films',
-    route: '/film',
-    icon: FilmIcon,
-  },
+
   {
     label: 'Inventory',
     route: '/inventory',
     icon: RectangleStackIcon,
   },
-  {
-    label: 'Languages',
-    route: '/language',
-    icon: LanguageIcon,
-  },
+
   {
     label: 'Rentals',
     route: '/rental',
@@ -77,5 +80,10 @@ export const navLinks = [
     label: 'Staff',
     route: '/staff',
     icon: IdentificationIcon,
+  },
+  {
+    label: 'Stores',
+    route: '/store',
+    icon: BuildingStorefrontIcon,
   },
 ];
