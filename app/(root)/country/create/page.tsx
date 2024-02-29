@@ -2,21 +2,21 @@ import React from 'react';
 
 import { Metadata } from 'next';
 import Breadcrumbs from '@/components/shared/Breadcrumbs';
-import CreateForm from '@/components/Category/CreateForm';
+import CreateForm from '@/components/Country/CreateForm';
 
 export const metadata: Metadata = {
-  title: 'Create Category',
+  title: 'Create Country',
 };
 
-function CreateCategoryPage() {
+function CreateCountryPage() {
   return (
     <main>
       <Breadcrumbs
         breadcrumbs={[
-          { label: 'Categories', href: '/category' },
+          { label: 'Countries', href: '/country' },
           {
-            label: 'Create Category',
-            href: '/category/create',
+            label: 'Create Country',
+            href: '/country/create',
             active: true,
           },
         ]}
@@ -26,4 +26,4 @@ function CreateCategoryPage() {
   );
 }
 
-export default CreateCategoryPage;
+export default CreateCountryPage;

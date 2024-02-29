@@ -3,6 +3,7 @@ import Pagination from '@/components/shared/Pagination';
 import Search from '@/components/shared/search';
 import { fetchStorePages } from '@/lib/actions/store';
 import StoreTable from '@/components/Store/StoreTable';
+import { CreateStore } from '@/components/Store/Buttons';
 
 async function StorePage({
   searchParams,
@@ -21,7 +22,7 @@ async function StorePage({
       </div>
       <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
         <Search placeholder="Search stores..." />
-        {/* <CreateStore /> */}
+        <CreateStore />
       </div>
       <StoreTable query={searchParams.query} currentPage={selectedPage} />
       <div className="mt-5 flex w-full justify-center">

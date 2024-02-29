@@ -3,8 +3,16 @@
 import prisma from '@/lib/db';
 import { ITEMS_PER_PAGE } from '@/constants';
 
-export async function getAllAddresses() {
-  return await prisma.address.findMany();
+export async function getAddressesForSelect() {
+  return await prisma.address.findMany({
+    select: {
+      address: true,
+      address_id: true,
+    },
+    orderBy: {
+      address: 'asc',
+    },
+  });
 }
 
 export async function getFilteredAddresses(query: string, currentPage: number) {

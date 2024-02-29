@@ -26,7 +26,7 @@ A UI/Admin application for the dvdrentals database.
 - [x] Forms for Actors (add & edit)
 - [ ] Forms for Addresses (add & edit)
 - [x] Forms for Categories (add & edit)
-- [ ] Forms for Countries (add & edit)
+- [x] Forms for Countries (add & edit)
 - [ ] Forms for Cities (add & edit)
 - [ ] Forms for Customers (add & edit)
 - [ ] Forms for Films (add & edit)
@@ -38,6 +38,7 @@ A UI/Admin application for the dvdrentals database.
 - [ ] Add Skeletons and integrate with Suspense
 - [ ] Google Auth with NextAuth
 - [ ] Performance tune queries
+- [ ] Unit tests & Test coverage reports
 
 ---
 

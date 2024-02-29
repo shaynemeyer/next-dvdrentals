@@ -9,6 +9,8 @@ import {
 } from '@/components/ui/table';
 
 import { getFilteredStores } from '@/lib/actions/store';
+import { DeleteStore, UpdateStore } from './Buttons';
+import { getAddressesForSelect } from '@/lib/actions/address';
 
 async function StoreTable({
   query,
@@ -27,6 +29,7 @@ async function StoreTable({
           <TableHead>Address</TableHead>
           <TableHead>District</TableHead>
           <TableHead>Manager</TableHead>
+          <TableHead></TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -37,6 +40,12 @@ async function StoreTable({
             <TableCell>{store.address.district}</TableCell>
             <TableCell>
               {store.staff.first_name} {store.staff.last_name}
+            </TableCell>
+            <TableCell className="whitespace-nowrap py-3 pl-6 pr-3">
+              <div className="flex justify-end gap-3">
+                <UpdateStore store_id={`${store.store_id}`} />
+                <DeleteStore store_id={`${store.store_id}`} />
+              </div>
             </TableCell>
           </TableRow>
         ))}

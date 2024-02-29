@@ -3,6 +3,19 @@
 import prisma from '@/lib/db';
 import { ITEMS_PER_PAGE } from '@/constants';
 
+export async function getStaffForSelect() {
+  return await prisma.staff.findMany({
+    select: {
+      staff_id: true,
+      first_name: true,
+      last_name: true,
+    },
+    orderBy: {
+      last_name: 'asc',
+    },
+  });
+}
+
 export async function fetchStaffPages(query: string) {
   const count = await prisma.staff.count({
     where: {

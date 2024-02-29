@@ -7,3 +7,9 @@ export type StaffList = {
   city?: string;
   country?: string;
 };
+
+export type StaffField = {
+  staff_id: number;
+  first_name: string;
+  last_name: string;
+};
