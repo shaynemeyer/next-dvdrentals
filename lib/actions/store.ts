@@ -128,6 +128,19 @@ export async function getStoreById(id: number) {
   });
 }
 
+export async function getStoresForSelect() {
+  return await prisma.store.findMany({
+    select: {
+      store_id: true,
+      address: {
+        select: {
+          address: true,
+        },
+      },
+    },
+  });
+}
+
 export async function getStoreByIdForForm(id: number) {
   return await prisma.store.findUnique({
     select: {

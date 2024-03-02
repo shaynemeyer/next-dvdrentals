@@ -3,6 +3,7 @@ import React from 'react';
 import Pagination from '@/components/shared/Pagination';
 import Search from '@/components/shared/search';
 import StaffTable from '@/components/Staff/StaffTable';
+import { CreateStaff } from '@/components/Staff/Buttons';
 
 async function StaffPage({
   searchParams,
@@ -21,6 +22,7 @@ async function StaffPage({
       </div>
       <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
         <Search placeholder="Search staff..." />
+        <CreateStaff />
       </div>
       <StaffTable query={searchParams.query} currentPage={selectedPage} />
       <div className="mt-5 flex w-full justify-center">

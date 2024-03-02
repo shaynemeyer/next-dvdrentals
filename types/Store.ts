@@ -3,3 +3,10 @@ export type StoreForm = {
   manager_staff_id: number;
   address_id: number;
 };
+
+export type StoreField = {
+  store_id: number;
+  address: {
+    address: string;
+  };
+};

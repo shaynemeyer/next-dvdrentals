@@ -39,6 +39,8 @@ A UI/Admin application for the dvdrentals database.
 - [ ] Google Auth with NextAuth
 - [ ] Performance tune queries
 - [ ] Unit tests & Test coverage reports
+- [ ] Add documentation generation
+- [ ] Enhance Usability while editing, for example adding an address while editing a store.
 
 ---
 
