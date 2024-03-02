@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/table';
 
 import { getFilteredCities } from '@/lib/actions/city';
+import { DeleteCity, UpdateCity } from './Buttons';
 
 async function CityTable({
   query,
@@ -26,6 +27,7 @@ async function CityTable({
           <TableHead>ID</TableHead>
           <TableHead>Name</TableHead>
           <TableHead>Country</TableHead>
+          <TableHead></TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -34,6 +36,10 @@ async function CityTable({
             <TableCell className="w-[30px]">{city.city_id}</TableCell>
             <TableCell>{city.city}</TableCell>
             <TableCell>{city?.country?.country}</TableCell>
+            <TableCell className="flex justify-end gap-3">
+              <UpdateCity city_id={`${city.city_id}`} />
+              <DeleteCity city_id={`${city.city_id}`} />
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>

@@ -94,6 +94,15 @@ export async function getAllCountries() {
   return await prisma.country.findMany();
 }
 
+export async function getCountriesForSelect() {
+  return await prisma.country.findMany({
+    select: {
+      country_id: true,
+      country: true,
+    },
+  });
+}
+
 export async function fetchCountryPages(query: string) {
   const count = await prisma.country.count({
     where: {

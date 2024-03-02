@@ -3,6 +3,7 @@ import { fetchCityPages } from '@/lib/actions/city';
 import Pagination from '@/components/shared/Pagination';
 import Search from '@/components/shared/search';
 import CityTable from '@/components/City/CityTable';
+import { CreateCity } from '@/components/City/Buttons';
 
 async function CityPage({
   searchParams,
@@ -21,7 +22,7 @@ async function CityPage({
       </div>
       <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
         <Search placeholder="Search cities..." />
-        {/* <CreateCustomer /> */}
+        <CreateCity />
       </div>
       <CityTable query={searchParams.query} currentPage={selectedPage} />
       <div className="mt-5 flex w-full justify-center">

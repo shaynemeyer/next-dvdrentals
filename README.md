@@ -27,11 +27,12 @@ A UI/Admin application for the dvdrentals database.
 - [ ] Forms for Addresses (add & edit)
 - [x] Forms for Categories (add & edit)
 - [x] Forms for Countries (add & edit)
-- [ ] Forms for Cities (add & edit)
+- [x] Forms for Cities (add & edit)
 - [ ] Forms for Customers (add & edit)
 - [ ] Forms for Films (add & edit)
 - [x] Forms for Languages (add & edit)
-- [ ] Forms for Stores (add & edit)
+- [x] Forms for Staff (add & edit)
+- [x] Forms for Stores (add & edit)
 - [ ] UI for managing inventory
 - [ ] Sales Dashboard with graphs
 - [x] Pagination on bigger queries

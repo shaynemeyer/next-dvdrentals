@@ -4,6 +4,7 @@ import Pagination from '@/components/shared/Pagination';
 import { fetchAddressPages } from '@/lib/actions/address';
 import Search from '@/components/shared/search';
 import { ITEMS_PER_PAGE } from '@/constants';
+import { CreateAddress } from '@/components/Address/Buttons';
 
 async function page({
   searchParams,
@@ -22,7 +23,7 @@ async function page({
       </div>
       <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
         <Search placeholder="Search addresses..." />
-        {/* <CreateCustomer /> */}
+        <CreateAddress />
       </div>
 
       <AddressTable query={searchParams.query} currentPage={selectedPage} />
