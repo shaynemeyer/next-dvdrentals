@@ -44,6 +44,7 @@ function CreateForm({ cities = [] }: { cities: CityField[] }) {
               ))}
           </div>
         </div>
+
         {/* Address 2 */}
         <div className="mb-4">
           <label htmlFor="address2" className="mb-2 block text-sm font-medium">
