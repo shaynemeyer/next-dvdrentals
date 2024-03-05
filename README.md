@@ -24,11 +24,11 @@ A UI/Admin application for the dvdrentals database.
 - [x] Layouts with Tailwind CSS
 - [x] Site Navigation
 - [x] Forms for Actors (add & edit)
-- [ ] Forms for Addresses (add & edit)
+- [x] Forms for Addresses (add & edit)
 - [x] Forms for Categories (add & edit)
 - [x] Forms for Countries (add & edit)
 - [x] Forms for Cities (add & edit)
-- [ ] Forms for Customers (add & edit)
+- [x] Forms for Customers (add & edit)
 - [ ] Forms for Films (add & edit)
 - [x] Forms for Languages (add & edit)
 - [x] Forms for Staff (add & edit)
@@ -47,5 +47,5 @@ A UI/Admin application for the dvdrentals database.
 
 ## Resources
 
-- The `dvdrental` database for PostgreSQL https://www.postgresqltutorial.com/postgresql-getting-started/postgresql-sample-database/
-- https://www.freecodecamp.org/news/shadcn-with-next-js-14/
+- The `dvdrental` database for PostgreSQL <https://www.postgresqltutorial.com/postgresql-getting-started/postgresql-sample-database/>
+- <https://www.freecodecamp.org/news/shadcn-with-next-js-14/>
