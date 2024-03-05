@@ -14,6 +14,7 @@ import {
   IdentificationIcon,
   BanknotesIcon,
   BuildingStorefrontIcon,
+  ClipboardDocumentListIcon,
 } from '@heroicons/react/24/outline';
 
 export const ITEMS_PER_PAGE = 10;
@@ -68,7 +69,7 @@ export const navLinks = [
   {
     label: 'Inventory',
     route: '/inventory',
-    icon: RectangleStackIcon,
+    icon: ClipboardDocumentListIcon,
   },
 
   {

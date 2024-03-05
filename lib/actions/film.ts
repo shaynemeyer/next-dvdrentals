@@ -3,8 +3,16 @@
 import prisma from '@/lib/db';
 import { ITEMS_PER_PAGE } from '@/constants';
 
-export async function getAllFilms() {
-  return await prisma.film.findMany();
+export async function getFilmsForSelect() {
+  return await prisma.film.findMany({
+    select: {
+      film_id: true,
+      title: true,
+    },
+    orderBy: {
+      title: 'asc',
+    },
+  });
 }
 
 export async function fetchFilmPages(query: string) {

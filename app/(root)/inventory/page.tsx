@@ -3,6 +3,7 @@ import Pagination from '@/components/shared/Pagination';
 import Search from '@/components/shared/search';
 import { fetchInventoryPages } from '@/lib/actions/inventory';
 import InventoryTable from '@/components/Inventory/InventoryTable';
+import { CreateInventory } from '@/components/Inventory/Buttons';
 
 async function InventoryPage({
   searchParams,
@@ -20,6 +21,7 @@ async function InventoryPage({
       </div>
       <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
         <Search placeholder="Search inventory..." />
+        <CreateInventory />
       </div>
       <InventoryTable query={searchParams.query} currentPage={selectedPage} />
       <div className="mt-5 flex w-full justify-center">

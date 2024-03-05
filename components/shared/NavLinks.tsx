@@ -77,7 +77,7 @@ export default function NavLinks() {
         <h2 className="pt-2">Admin Stuff</h2>
       </div>
       {/* Customers */}
-      {navLinks.slice(10, 14).map((link) => {
+      {navLinks.slice(9, 14).map((link) => {
         const LinkIcon = link.icon;
         return (
           <Link

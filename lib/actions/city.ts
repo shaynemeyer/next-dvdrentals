@@ -96,10 +96,6 @@ export async function updateCity(
   redirect('/city');
 }
 
-export async function getAllCities() {
-  return await prisma.city.findMany();
-}
-
 export async function getCitiesForSelect() {
   return await prisma.city.findMany({
     select: {

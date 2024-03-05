@@ -8,6 +8,7 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { getFilteredInventory } from '@/lib/actions/inventory';
+import { DeleteInventory, UpdateInventory } from './Buttons';
 
 async function InventoryTable({
   query,
@@ -25,6 +26,7 @@ async function InventoryTable({
           <TableHead>ID</TableHead>
           <TableHead>Film</TableHead>
           <TableHead>Store</TableHead>
+          <TableHead></TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -32,10 +34,10 @@ async function InventoryTable({
           <TableRow key={item.inventory_id}>
             <TableCell className="w-[30px]">{item.inventory_id}</TableCell>
             <TableCell>{item?.film?.title}</TableCell>
-            <TableCell>
-              {/* {store?.address},{' '}
-                {cities.find((city) => city.city_id === store?.city_id)?.city}{' '}
-                {store?.district} */}
+            <TableCell>{item.store_id}</TableCell>
+            <TableCell className="flex justify-end gap-3">
+              <UpdateInventory inventory_id={`${item.inventory_id}`} />
+              <DeleteInventory inventory_id={`${item.inventory_id}`} />
             </TableCell>
           </TableRow>
         ))}

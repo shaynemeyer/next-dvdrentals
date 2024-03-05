@@ -9,6 +9,7 @@ import {
   UserCircleIcon,
   MapPinIcon,
   AtSymbolIcon,
+  BuildingOffice2Icon,
 } from '@heroicons/react/24/outline';
 import { usePathname } from 'next/navigation';
 import { StoreField } from '@/types/Store';
@@ -166,7 +167,7 @@ function CreateForm({
               ))}
           </select>
 
-          <UserCircleIcon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
+          <BuildingOffice2Icon className="pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500" />
         </div>
 
         <div id="customer-error" aria-live="polite" aria-atomic="true">
