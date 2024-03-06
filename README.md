@@ -33,6 +33,7 @@ A UI/Admin application for the dvdrentals database.
 - [x] Forms for Languages (add & edit)
 - [x] Forms for Staff (add & edit)
 - [x] Forms for Stores (add & edit)
+- [ ] Forms for Payments (add & edit)
 - [ ] Forms for Rentals (add & edit)
 - [x] Forms for Inventory (add & edit)
 - [ ] Light/Dark mode toggle

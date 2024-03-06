@@ -27,7 +27,9 @@ async function RentalTable({
           <TableHead>Title</TableHead>
           <TableHead>Rental Date</TableHead>
           <TableHead>Return Date</TableHead>
+          <TableHead>Payment</TableHead>
           <TableHead>Staff</TableHead>
+          <TableHead></TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -40,6 +42,7 @@ async function RentalTable({
             <TableCell>{rental.inventory?.film?.title}</TableCell>
             <TableCell>{rental.rental_date.toDateString()}</TableCell>
             <TableCell>{rental.return_date?.toDateString()}</TableCell>
+            <TableCell></TableCell>
             <TableCell>
               {/* Show Staff  */}
               {rental.staff.first_name} {rental.staff.last_name}

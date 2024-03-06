@@ -10,3 +10,14 @@ export type StoreField = {
     address: string;
   };
 };
+
+export type StoreDisplay = {
+  store_id: number;
+  address: {
+    address: string;
+    district: string;
+    city: {
+      city: string;
+    };
+  };
+};

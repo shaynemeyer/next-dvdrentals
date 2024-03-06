@@ -141,6 +141,25 @@ export async function getStoresForSelect() {
   });
 }
 
+export async function getStoresForDisplay() {
+  return await prisma.store.findMany({
+    select: {
+      store_id: true,
+      address: {
+        select: {
+          district: true,
+          address: true,
+          city: {
+            select: {
+              city: true,
+            },
+          },
+        },
+      },
+    },
+  });
+}
+
 export async function getStoreByIdForForm(id: number) {
   return await prisma.store.findUnique({
     select: {

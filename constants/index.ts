@@ -3,7 +3,7 @@ import {
   TicketIcon,
   UserIcon,
   MapPinIcon,
-  ArchiveBoxIcon,
+  CurrencyDollarIcon,
   BuildingOffice2Icon,
   FlagIcon,
   GlobeAltIcon,
@@ -71,12 +71,16 @@ export const navLinks = [
     route: '/inventory',
     icon: ClipboardDocumentListIcon,
   },
-
   {
-    label: 'Rentals',
-    route: '/rental',
-    icon: BanknotesIcon,
+    label: 'Payments',
+    route: '/payment',
+    icon: CurrencyDollarIcon,
   },
+  // {
+  //   label: 'Rentals',
+  //   route: '/rental',
+  //   icon: BanknotesIcon,
+  // },
   {
     label: 'Staff',
     route: '/staff',
