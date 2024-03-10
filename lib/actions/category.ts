@@ -18,10 +18,6 @@ const FormSchema = z.object({
   name: z.string(),
 });
 
-export async function getAllCategories() {
-  return await prisma.category.findMany();
-}
-
 const CreateCategory = FormSchema.omit({ category_id: true });
 
 export async function createCategory(prevState: State, formData: FormData) {

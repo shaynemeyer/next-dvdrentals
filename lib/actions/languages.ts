@@ -90,8 +90,13 @@ export async function updateLanguage(
   redirect('/language');
 }
 
-export async function getAllLanguages() {
-  return await prisma.language.findMany();
+export async function getLanguagesForSelect() {
+  return await prisma.language.findMany({
+    select: {
+      language_id: true,
+      name: true,
+    },
+  });
 }
 
 export async function fetchLanguagePages(query: string) {

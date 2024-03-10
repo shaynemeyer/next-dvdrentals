@@ -90,10 +90,6 @@ export async function updateCountry(
   redirect('/country');
 }
 
-export async function getAllCountries() {
-  return await prisma.country.findMany();
-}
-
 export async function getCountriesForSelect() {
   return await prisma.country.findMany({
     select: {

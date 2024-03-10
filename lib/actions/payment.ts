@@ -3,10 +3,6 @@
 import prisma from '@/lib/db';
 import { ITEMS_PER_PAGE } from '@/constants';
 
-export async function getAllPayments() {
-  return await prisma.payment.findMany();
-}
-
 export async function fetchFilteredPayments(
   query: string,
   currentPage: number

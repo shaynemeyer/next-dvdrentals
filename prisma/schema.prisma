@@ -80,25 +80,23 @@ model customer {
 }
 
 model film {
-  film_id          Int                     @id @default(autoincrement())
-  title            String                  @db.VarChar(255)
+  film_id          Int             @id @default(autoincrement())
+  title            String          @db.VarChar(255)
   description      String?
   release_year     Int?
-  language_id      Int                     @db.SmallInt
-  rental_duration  Int                     @default(3) @db.SmallInt
-  rental_rate      Decimal                 @default(4.99) @db.Decimal(4, 2)
-  length           Int?                    @db.SmallInt
-  replacement_cost Decimal                 @default(19.99) @db.Decimal(5, 2)
-  rating           mpaa_rating?            @default(G)
-  last_update      DateTime                @default(now()) @db.Timestamp(6)
+  language_id      Int             @db.SmallInt
+  rental_duration  Int             @default(3) @db.SmallInt
+  rental_rate      Decimal         @default(4.99) @db.Decimal(4, 2)
+  length           Int?            @db.SmallInt
+  replacement_cost Decimal         @default(19.99) @db.Decimal(5, 2)
+  rating           mpaa_rating?    @default(G)
+  last_update      DateTime        @default(now()) @db.Timestamp(6)
   special_features String[]
-  fulltext         Unsupported("tsvector")
-  language         language                @relation(fields: [language_id], references: [language_id])
+  language         language        @relation(fields: [language_id], references: [language_id])
   film_actor       film_actor[]
   film_category    film_category[]
   inventory        inventory[]
 
-  @@index([fulltext], type: Gist)
   @@index([language_id], map: "idx_fk_language_id")
   @@index([title], map: "idx_title")
 }

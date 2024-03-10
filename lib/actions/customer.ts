@@ -122,11 +122,6 @@ export async function updateCustomer(
   redirect('/customer');
 }
 
-export async function getAllCustomers() {
-  // using a raw query so we can use the view named 'customer_list'
-  return await prisma.customer.findMany();
-}
-
 export async function getFilteredCustomers(query: string, currentPage: number) {
   const offsetSkip = (currentPage - 1) * ITEMS_PER_PAGE;
 

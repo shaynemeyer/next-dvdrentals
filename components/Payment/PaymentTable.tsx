@@ -21,10 +21,6 @@ async function PaymentTable({
 }) {
   const payments = await fetchFilteredPayments(query, currentPage);
 
-  // const fetchStoreName = (id: number, stores: StoreDisplay[]) => {
-  //   return stores.find((store) => store.store_id === id);
-  // };
-
   return (
     <Table>
       <TableHeader>
